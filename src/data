@@ -1,0 +1,34 @@
+import React from 'react';
+import './style/style.css';
+import './style/demo.scss';
+import purse from './images/purse.jpeg';
+
+class App extends React.Component {
+  render() {
+    return (<><h1>Khushbu</h1>
+      <div className='Demo'>
+      <h1>Khushbu</h1>
+        <div>
+          <p>Purse for buying</p>
+          <img src={purse} alt="purse" />
+        </div>
+        <div>
+          <p>Purse for buying</p>
+          <img src={purse} alt="purse" />
+        </div>
+        <div>
+          <p>Purse for buying</p>
+          <img src={purse} alt="purse" />
+        </div>
+      </div>
+      <div className="main">
+        <p> here it is my bio</p>
+        <div className="content">
+          <h1>Khushbu kosti</h1>
+          <p>i m in bacancy technology</p>
+        </div>
+      </div>
+    </>)
+  }
+}
+export default App; 
