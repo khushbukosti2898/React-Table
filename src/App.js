@@ -4,7 +4,7 @@ import ReactTable from 'react-table-6';
 import 'react-table-6/react-table.css';
 import GlobalSearchComponent from './SearchComponent';
 import './style/style';
-
+import NumberInput from './NumberFormat'
 
 class App extends React.Component {
 	constructor(props) {
@@ -53,6 +53,7 @@ class App extends React.Component {
 		}]
 
 		return (<div>
+       <NumberInput/>
       <h1>React Table Demo</h1>
 			<GlobalSearchComponent
 				data={this.state.data}
@@ -74,8 +75,9 @@ class App extends React.Component {
 				pageSizeOptions={[2, 4, 6, 8]}
 				data={data}
 				columns={columns}
-
 			/>
+      <br/>
+     
 		</div>)
 	}
 }

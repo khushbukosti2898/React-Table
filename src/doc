@@ -1,0 +1,46 @@
+import React from 'react'
+class NumberFormat extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: '',
+            finalVal: ''
+        }
+    }
+
+    handleChange = (e) => {
+        let { name, value } = e.target
+        this.setState({ [name]: value },
+            () => this.checkEx(name, value))
+        /* let value1 = value.split('-').join('');
+        let finalVal = value1.match(/.{1,3}/g).join('-');
+        console.log("result  " + finalVal)
+        this.setState({ finalVal: finalVal }) */
+    }
+    checkEx = (name, value) => {
+        let arr = value.split("").filter((a) => { return /[0-9]/.test(a) });
+        console.log("arr " + arr)
+        let res1 = arr.map((res, i) => {
+            if (i === 6) {
+                return "-" + res
+            }else if (i === 3) {
+                return " " + res
+            }
+            else {
+                return res
+            }
+        })
+        console.log(res1)
+        this.setState({ finalVal: res1.join("") })
+
+    }
+
+    render() {
+        return (<>
+            <input type="text" name="data" maxLength="14" value={this.state.finalVal} onChange={this.handleChange}
+               /*  onBlur={this.handleChange} */ />
+        </>)
+    }
+}
+
+export default NumberFormat;
